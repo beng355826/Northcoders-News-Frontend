@@ -16,7 +16,7 @@ const ViewALLArticles = (topic) => {
 
   console.log(articles);
 
-  if (isLoading) return <p>Loading...</p>
+  if (isLoading) return <p>Loading.....</p>
   return (
     <section>
       <h3>All Articles</h3>
