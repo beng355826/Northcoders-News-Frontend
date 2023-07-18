@@ -36,17 +36,20 @@ nav{
   }
 
 img {
-    width:100%;
+    width:90%;
     object-fit : cover
 }
 
-.listWrapper {
-    width: 1000px;
+.listContainer {
+    border-radius: 5%;
+    border: dashed;
+    /* width: 750px; */
     background-color: #4F5D75;
     margin: 20px;
     display: grid;
     grid-template-columns: 50% 50%;
     grid-gap: 10px;
+  
   }
 
 .listDetails {
@@ -55,11 +58,13 @@ img {
 
 }
 
-.listPic {
+.listPic{
 
-    
+    margin-top: 50px;
+    margin-right: 150px;
 
 }
+
 
 
 

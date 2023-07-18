@@ -1,37 +1,29 @@
 import { useState, useEffect } from "react";
 import { getArticles } from "./Api";
 import createdAtConvertor from "./Utils/createdAtConvertor";
+import ArticleCard from "./ArticleCard";
 
 const ViewALLArticles = (topic) => {
   const [articles, setArticles] = useState();
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    getArticles().then((articles) => {
-      setArticles(articles);
+    getArticles().then((receivedArticles) => {
+      setArticles(receivedArticles);
+      setIsLoading(false)
     });
   }, []);
 
-  console.log(articles)
+  console.log(articles);
 
+  if (isLoading) return <p>Loading...</p>
   return (
     <section>
       <h3>All Articles</h3>
       <ul>
         {articles.map((article) => {
           return (
-            <li className="listWrapper" key={article.article_id}>
-              <div className="listDetails">
-              <h2 >{article.title}</h2>
-              <p >By {article.author}</p>
-              <p >Comments: {article.comment_count}</p>
-              <p >{createdAtConvertor(article.created_at)}</p>
-              <p >Article #{article.article_id}</p>
-              </div>
-              <img className="listPic"
-                src={article.article_img_url}
-                alt={`picture of ${article.title}`}
-              />
-            </li>
+            <ArticleCard article={article}/>
           );
         })}
       </ul>
