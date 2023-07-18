@@ -14,8 +14,6 @@ const ViewALLArticles = (topic) => {
     });
   }, []);
 
-  console.log(articles);
-
   if (isLoading) return <p>Loading.....</p>
   return (
     <section>

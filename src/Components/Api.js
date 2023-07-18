@@ -16,4 +16,14 @@ export const getSingleArticle = (articleId) => {
     })
 
 }
+
+export const getAssociatedComments = (articleId) => {
+
+    return axios.get(`https://benggs-nc-news.onrender.com/api/articles/${articleId}/comments`)
+    .then((recComments) => {
+        return recComments.data.comments
+    })
+
+
+}
  

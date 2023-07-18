@@ -1,6 +1,7 @@
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
+import Comments from './Comments'
 import { getSingleArticle } from './Api'
 import createdAtConvertor  from './Utils/createdAtConvertor'
 
@@ -22,6 +23,7 @@ useEffect(() => {
 if(isLoading) return <p className='singleArticleText'>Loading ...</p>
     return ( 
        
+        <div>
         <section className='articleWrapper'>
         <p className='articleBody'>{article.body}</p>
         <div className='articleDetails'>
@@ -32,7 +34,10 @@ if(isLoading) return <p className='singleArticleText'>Loading ...</p>
         <p>votes:{article.votes}</p>
         </div>
         </section>
-        
+       <aside>
+        <Comments articleId={article_id}/>
+       </aside>
+       </div>
 
      );
 }
