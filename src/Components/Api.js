@@ -27,3 +27,13 @@ export const getAssociatedComments = (articleId) => {
 
 }
  
+export const patchVote = (articleId, increment) => {
+
+    return axios.patch(`https://benggs-nc-news.onrender.com/api/articles/${articleId}`, { inc_votes: increment })
+    .then((receivedData) => {
+        
+        return receivedData.data
+
+    })
+
+}
