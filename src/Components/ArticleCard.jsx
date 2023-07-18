@@ -1,3 +1,4 @@
+import {Routes, Route, Link} from 'react-router-dom'
 import createdAtConvertor from "./Utils/createdAtConvertor";
 
 const ArticleCard = ({article}) => {
@@ -5,7 +6,7 @@ const ArticleCard = ({article}) => {
     console.log(article)
     return ( <li className="listContainer" key={article.article_id}>
     <div className="listDetails">
-      <h2>{article.title}</h2>
+      <Link to={`/${article.article_id}`}> <h2>{article.title}</h2> </Link>
       <p>By {article.author}</p>
       <p>Comments: {article.comment_count}</p>
       <p>{createdAtConvertor(article.created_at)}</p>

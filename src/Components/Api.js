@@ -7,4 +7,13 @@ export const getArticles = () => {
         return articles.data.articles
     })
 }
+
+export const getSingleArticle = (articleId) => {
+
+    return axios.get(`https://benggs-nc-news.onrender.com/api/articles/${articleId}`)
+    .then((receivedData) => {
+        return receivedData.data
+    })
+
+}
  
