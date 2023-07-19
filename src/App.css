@@ -135,3 +135,11 @@ grid-column-start: 1;
 }
 
 
+button:disabled{
+    border: solid rgb(88, 29, 94);
+}
+
+button{
+    border-radius: 5%;
+    border: green solid;
+}
