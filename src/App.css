@@ -172,4 +172,21 @@ button{
 
 }
 
+.topicWrapper {
+    display: flex;
+    border: solid cornsilk
+    
+
+}
+
+.topicPs {
+
+    margin: 20px;
+    align-items: center;
+    text-align: center;
+    
+
+}
+
+
 

@@ -4,6 +4,7 @@ import {Routes, Route, ScrollRestoration} from 'react-router-dom'
 import Header from './Components/Header'
 import Nav from './Components/Nav'
 import ViewALLArticles from './Components/ViewALLArticles'
+import ViewArticlesByTopics from './Components/ViewArticlesByTopics'
 import SingleArticle from './Components/SingleArticle'
 
 function App() {
@@ -16,6 +17,7 @@ const [topic, setTopicState] = useState([])
     <Nav topic={topic}/>
     <Routes>
     <Route path="/" element={<ViewALLArticles topic={topic}/>} />
+    <Route path="/view-articles-by-topics" element={<ViewArticlesByTopics topic={topic} />} />
     <Route path="/:article_id" element={<SingleArticle topic={topic}/>} />
     </Routes>
     
