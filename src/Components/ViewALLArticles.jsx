@@ -1,10 +1,17 @@
 import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import { getArticles } from "./Api";
 import ArticleCard from "./ArticleCard";
+// import capitalise from "./Utils/capitalise";
 
-const ViewALLArticles = ({topic}) => {
+
+const ViewALLArticles = () => {
   const [articles, setArticles] = useState();
   const [isLoading, setIsLoading] = useState(true);
+
+
+  const {topic} = useParams()
+
 
   useEffect(() => {
     getArticles(topic).then((receivedArticles) => {
@@ -12,6 +19,8 @@ const ViewALLArticles = ({topic}) => {
       setIsLoading(false)
     });
   }, [topic]);
+
+
 
   if (isLoading) return <p>Loading.....</p>
   return (

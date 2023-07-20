@@ -1,13 +1,15 @@
-import { useState, useEffect } from "react";
-import { getArticles, getTopics } from "./Api";
-import createdAtConvertor from "./Utils/createdAtConvertor";
-import ArticleCard from "./ArticleCard";
+import { useState, useEffect  } from "react";
+import { Link , useParams } from 'react-router-dom'
+import { getTopics } from "./Api";
 import ViewALLArticles from "./ViewALLArticles";
+// import capitalise from "./Utils/capitalise";
 
-const ViewArticlesByTopics = () => {
+
+const ViewArticlesByTopics = (props) => {
 const [showTopics, setTopics] = useState()
 const [isLoading, setIsLoading] = useState(true)
-const [whichTopic, setWhichTopic] = useState()
+
+
 
 useEffect(() => {
     
@@ -18,28 +20,20 @@ getTopics().then((recData) => {
 })
 }, []);
 
-const handleClick = (topic) => {
-setWhichTopic(topic)
-
-
-
-}
 
 
 if (isLoading) return <p>Loading.....</p>
 return (
 
     <div>
-    <nav>
+    <nav >
         <p> Topics:</p>
         {showTopics.map((topic) => {
-          return  <button key={topic.slug} onClick={() => {
-            handleClick(topic.slug)
-          }}>< h4 className="topicPs">{topic.slug}</h4></button>
+          return <Link to={`/topics/${topic.slug}`} key={topic.slug} className="topics"> {topic.slug} </Link>
         })}
     </nav>
 
-    <ViewALLArticles topic={whichTopic}/>
+    <ViewALLArticles />
     </div>
 
 )

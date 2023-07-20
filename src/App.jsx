@@ -9,16 +9,15 @@ import SingleArticle from './Components/SingleArticle'
 
 function App() {
 
-const [topic, setTopicState] = useState([])
-
   return (
     <main>
     <Header/>
-    <Nav topic={topic}/>
+    <Nav/>
     <Routes>
-    <Route path="/" element={<ViewALLArticles topic={topic}/>} />
-    <Route path="/view-articles-by-topics" element={<ViewArticlesByTopics topic={topic} />} />
-    <Route path="/:article_id" element={<SingleArticle topic={topic}/>} />
+    <Route path="/" element={<ViewALLArticles/>} />
+    <Route path="/topics" element={<ViewArticlesByTopics />} />
+    <Route path="/topics/:topic" element={<ViewArticlesByTopics />} />
+    <Route path="/:article_id" element={<SingleArticle />} />
     </Routes>
     
     </main>

@@ -188,5 +188,14 @@ button{
 
 }
 
+.topics{
+    border: solid;
+    padding: 20px;
+    border-radius: 9%;
 
+}
+
+.topics:hover {
+    color: #BFC0C0
+  }
 
