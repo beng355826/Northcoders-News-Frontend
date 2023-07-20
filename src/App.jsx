@@ -5,6 +5,7 @@ import Header from './Components/Header'
 import Nav from './Components/Nav'
 import ViewALLArticles from './Components/ViewALLArticles'
 import SingleArticle from './Components/SingleArticle'
+import ViewArticlesByTopic from './Components/TopicsArticles'
 
 function App() {
 
