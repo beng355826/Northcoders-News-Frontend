@@ -7,7 +7,8 @@ const Comments = ({ articleId }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [commentInput, setCommentInput] = useState()
   const [renderComments, setRenderComments] = useState(false)
-const scrollBehaviour = { top: 500, behavior: "smooth" }
+  const [isError, setIsError] = useState(false)
+
 
   useEffect(() => {
     getAssociatedComments(articleId).then((recComments) => {
@@ -29,12 +30,17 @@ const scrollBehaviour = { top: 500, behavior: "smooth" }
       postComment(articleId, commentInput).then((recComment) => {
         setIsLoading(true)
         setRenderComments(true)
+        setCommentInput("")
+
+      }).catch((err) => {
+
+        setIsError(true)
+
       })
 
     }
       
       
-      setCommentInput("")
      
   }
 
@@ -46,6 +52,7 @@ const scrollBehaviour = { top: 500, behavior: "smooth" }
    
     <form onSubmit={handleSubmit} className="addCommentContainer">
     <button className="addCommentDeets" type="submit">Add Comment</button>
+    {isError ? <p className="addCommentDeets">There was a problem submitting your comment 😢</p> : <p></p>}
     <textarea value={commentInput} onChange={(event) => {
       setCommentInput(event.target.value)
     }}  
