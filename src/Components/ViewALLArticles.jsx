@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { getArticles } from "./Api";
 import ArticleCard from "./ArticleCard";
-// import capitalise from "./Utils/capitalise";
+import capitalise from "./Utils/capitalise";
 
 
 const ViewALLArticles = () => {
@@ -25,7 +25,7 @@ const ViewALLArticles = () => {
   if (isLoading) return <p>Loading.....</p>
   return (
     <section>
-      {topic ? <h3> Articles by {topic} </h3> : <h3>All Articles</h3>}
+      {topic ? <h3> Articles by {capitalise(topic)} </h3> : <h3>All Articles</h3>}
       <ul>
         {articles.map((article) => {
           return (

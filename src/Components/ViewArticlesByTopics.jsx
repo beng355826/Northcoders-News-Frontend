@@ -2,7 +2,7 @@ import { useState, useEffect  } from "react";
 import { Link , useParams } from 'react-router-dom'
 import { getTopics } from "./Api";
 import ViewALLArticles from "./ViewALLArticles";
-// import capitalise from "./Utils/capitalise";
+import capitalise from "./Utils/capitalise";
 
 
 const ViewArticlesByTopics = (props) => {
@@ -29,7 +29,7 @@ return (
     <nav >
         <p> Topics:</p>
         {showTopics.map((topic) => {
-          return <Link to={`/topics/${topic.slug}`} key={topic.slug} className="topics"> {topic.slug} </Link>
+          return <Link to={`/topics/${topic.slug}`} key={topic.slug} className="topics"> {capitalise(topic.slug)} </Link>
         })}
     </nav>
 
