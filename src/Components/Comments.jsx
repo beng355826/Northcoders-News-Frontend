@@ -24,7 +24,6 @@ const scrollBehaviour = { top: 500, behavior: "smooth" }
   
   const handleSubmit = (e) => {
     e.preventDefault()
-console.log(commentInput , '<-----');
     if(commentInput){
 
       postComment(articleId, commentInput).then((recComment) => {
