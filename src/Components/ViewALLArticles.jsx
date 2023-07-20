@@ -5,11 +5,9 @@ import ArticleCard from "./ArticleCard";
 import capitalise from "./Utils/capitalise";
 
 
-const ViewALLArticles = () => {
+const ViewALLArticles = (props) => {
   const [articles, setArticles] = useState();
   const [isLoading, setIsLoading] = useState(true);
-
-
   const {topic} = useParams()
 
 
