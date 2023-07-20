@@ -1,8 +1,14 @@
 import axios from "axios";
 
+
+const newsApi = axios.create({
+    baseURL: 'https://benggs-nc-news.onrender.com/'
+  })
+
+
 export const getArticles = () => {
    
-    return axios.get('https://benggs-nc-news.onrender.com/api/articles')
+    return newsApi.get('api/articles')
     .then((articles) => {
         return articles.data.articles
     })
@@ -10,7 +16,7 @@ export const getArticles = () => {
 
 export const getSingleArticle = (articleId) => {
 
-    return axios.get(`https://benggs-nc-news.onrender.com/api/articles/${articleId}`)
+    return newsApi.get(`api/articles/${articleId}`)
     .then((receivedData) => {
         return receivedData.data
     })
@@ -19,7 +25,7 @@ export const getSingleArticle = (articleId) => {
 
 export const getAssociatedComments = (articleId) => {
 
-    return axios.get(`https://benggs-nc-news.onrender.com/api/articles/${articleId}/comments`)
+    return newsApi.get(`api/articles/${articleId}/comments`)
     .then((recComments) => {
         return recComments.data.comments
     })
@@ -29,7 +35,7 @@ export const getAssociatedComments = (articleId) => {
  
 export const patchVote = (articleId, increment) => {
 
-    return axios.patch(`https://benggs-nc-news.onrender.com/api/articles/${articleId}`, { inc_votes: increment })
+    return newsApi.patch(`api/articles/${articleId}`, { inc_votes: increment })
     .then((receivedData) => {
         
         return receivedData.data
@@ -37,3 +43,13 @@ export const patchVote = (articleId, increment) => {
     })
 
 }
+
+export const postComment = (articleId, comment) => {
+    return newsApi.post(`api/articles/${articleId}/comments`, {"username" : "weegembump" , "body" : comment})
+    .then((receivedData) =>{
+        return receivedData.data.comment
+    })
+
+}
+
+

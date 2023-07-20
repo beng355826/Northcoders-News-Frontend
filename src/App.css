@@ -135,11 +135,41 @@ grid-column-start: 1;
 }
 
 
+
 button:disabled{
     border: solid rgb(88, 29, 94);
 }
 
 button{
     border-radius: 5%;
-    border: green solid;
 }
+
+
+
+.addCommentContainer{
+
+    display:grid;
+    grid-template-columns: 75% 25%;
+    grid-auto-flow:column;
+    justify-content: center;
+    list-style-type: none;
+    padding:20px;
+    margin-left:40px;
+    border-bottom: dashed #BFC0C0;
+}
+
+.addCommentInput{
+    grid-column-start: 1;
+    background-color: #384253;
+    font-size: 20px;
+    color:#FFFFFF
+}
+
+.addCommentDeets{
+    grid-column-start: 2;
+    margin:30px;
+    background-color:#4F5D75
+
+}
+
+
