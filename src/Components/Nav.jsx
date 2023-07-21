@@ -4,8 +4,7 @@ const Nav = () => {
     return ( 
 
         <nav>
-        <Link to='/' className="navItems">View All Articles</Link>
-        <Link className="navItems">View Articles by topic</Link>
+        <Link to='/topics' className="navItems">View Articles</Link>
         </nav>
 
      );

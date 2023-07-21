@@ -2,8 +2,10 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 import Comments from "./Comments";
+import Nav from "./Nav";
 import { getSingleArticle, patchVote } from "./Api";
 import createdAtConvertor from "./Utils/createdAtConvertor";
+
 
 const SingleArticle = () => {
   const { article_id } = useParams();
@@ -66,6 +68,7 @@ const SingleArticle = () => {
   if (isLoading) return <p className="singleArticleText">Loading ...</p>;
   return (
     <div>
+      <Nav />
       <section className="articleWrapper">
         <p className="articleBody">{article.body}</p>
         <div className="articleDetails">

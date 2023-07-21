@@ -1,23 +1,29 @@
 import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import { getArticles } from "./Api";
-import createdAtConvertor from "./Utils/createdAtConvertor";
 import ArticleCard from "./ArticleCard";
+import capitalise from "./Utils/capitalise";
 
-const ViewALLArticles = (topic) => {
+
+const ViewALLArticles = ({sortBy, orderBy}) => {
   const [articles, setArticles] = useState();
   const [isLoading, setIsLoading] = useState(true);
+  const {topic} = useParams()
+
 
   useEffect(() => {
-    getArticles().then((receivedArticles) => {
+    getArticles(topic, sortBy, orderBy).then((receivedArticles) => {
       setArticles(receivedArticles);
       setIsLoading(false)
     });
-  }, []);
+  }, [topic , sortBy, orderBy]);
+
+
 
   if (isLoading) return <p>Loading.....</p>
   return (
     <section>
-      <h3>All Articles</h3>
+      {topic ? <h3> Articles by {capitalise(topic)} </h3> : <h3>All Articles</h3>}
       <ul>
         {articles.map((article) => {
           return (
