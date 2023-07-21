@@ -3,6 +3,7 @@ import { Link , useParams, useSearchParams } from 'react-router-dom'
 import { getTopics } from "./Api";
 import ViewALLArticles from "./ViewALLArticles";
 import capitalise from "./Utils/capitalise";
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const ViewArticlesByTopics = (props) => {

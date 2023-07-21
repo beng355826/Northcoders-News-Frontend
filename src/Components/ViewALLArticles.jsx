@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { getArticles } from "./Api";
 import ArticleCard from "./ArticleCard";
 import capitalise from "./Utils/capitalise";
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const ViewALLArticles = ({sortBy, orderBy}) => {

@@ -1,4 +1,5 @@
 import './App.css'
+import 'react-toastify/dist/ReactToastify.css';
 import { useState } from 'react'
 import {Routes, Route, ScrollRestoration} from 'react-router-dom'
 import Header from './Components/Header'

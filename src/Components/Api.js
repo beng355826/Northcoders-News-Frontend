@@ -62,3 +62,15 @@ export const getTopics = () => {
     return recData.data.AllTopics;
   });
 };
+
+
+export const deleteApiComment = (commentId) => {
+
+    return newsApi.delete(`api/comments/${commentId}`)
+    .then(() => {
+
+        return `deleted ${commentId}`
+
+    })
+
+}
