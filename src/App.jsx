@@ -12,9 +12,8 @@ function App() {
   return (
     <main>
     <Header/>
-    <Nav/>
     <Routes>
-    <Route path="/" element={<ViewALLArticles/>} />
+    <Route path="/" element={<ViewArticlesByTopics />} />
     <Route path="/topics" element={<ViewArticlesByTopics />} />
     <Route path="/topics/:topic" element={<ViewArticlesByTopics />} />
     <Route path="/:article_id" element={<SingleArticle />} />

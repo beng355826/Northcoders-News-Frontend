@@ -5,18 +5,18 @@ import ArticleCard from "./ArticleCard";
 import capitalise from "./Utils/capitalise";
 
 
-const ViewALLArticles = (props) => {
+const ViewALLArticles = ({sortBy, orderBy}) => {
   const [articles, setArticles] = useState();
   const [isLoading, setIsLoading] = useState(true);
   const {topic} = useParams()
 
 
   useEffect(() => {
-    getArticles(topic).then((receivedArticles) => {
+    getArticles(topic, sortBy, orderBy).then((receivedArticles) => {
       setArticles(receivedArticles);
       setIsLoading(false)
     });
-  }, [topic]);
+  }, [topic , sortBy, orderBy]);
 
 
 
