@@ -172,4 +172,30 @@ button{
 
 }
 
+.topicWrapper {
+    display: flex;
+    border: solid cornsilk
+    
+
+}
+
+.topicPs {
+
+    margin: 20px;
+    align-items: center;
+    text-align: center;
+    
+
+}
+
+.topics{
+    border: solid;
+    padding: 20px;
+    border-radius: 9%;
+
+}
+
+.topics:hover {
+    color: #BFC0C0
+  }
 
